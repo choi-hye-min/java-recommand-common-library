@@ -3,7 +3,6 @@ package com.arthur.recommandlibrary.guava;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableMap;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +14,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-@Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class BaseTest {
@@ -65,7 +63,7 @@ public class BaseTest {
          */
         Iterator<String> iterator = split.iterator();
         while (iterator.hasNext()){
-            log.info(iterator.next());
+            System.out.println(iterator.next());
         }
     }
 }
