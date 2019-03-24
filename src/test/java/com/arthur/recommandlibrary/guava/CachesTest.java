@@ -46,11 +46,12 @@ public class CachesTest {
                        }
                 );
 
-        log.info(loadingCache.getUnchecked("P1000").toString());
+        loadingCache.putAll(personMap); // person데이터들을 전부 캐시에 올린다.
+
+        log.info(loadingCache.getUnchecked("P1000").toString()); // 캐시에서 가져옴
 
         Thread.sleep(3500); // 3.5초 대기 그동안 캐시가 사라지기때문에 CacheLoader에서 다시 불러온다
 
-        log.info(loadingCache.getUnchecked("P1000").toString());
-        log.info(loadingCache.getUnchecked("P999").toString());
+        log.info(loadingCache.getUnchecked("P1000").toString()); // personMap에서 가져옴
     }
 }
